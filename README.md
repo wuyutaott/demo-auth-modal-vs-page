@@ -34,3 +34,23 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 项目目录说明
+demo-auth-modal-vs-page/
+└─ src/
+   ├─ app/
+   │  ├─ page.tsx                 # 首页：演示“打开登录弹窗”
+   │  ├─ login/
+   │  │  └─ page.tsx              # 独立登录页 /login
+   │  └─ api/
+   │     └─ login/
+   │        └─ route.ts           # Mock 登录 API（POST /api/login）
+   ├─ components/
+   │  └─ auth/
+   │     ├─ AuthForm.tsx          # 可复用登录表单（页面/弹窗共用）
+   │     └─ AuthModal.tsx         # 登录弹窗壳
+   └─ lib/
+      ├─ useAuth.ts               # 登录动作/状态（hook）
+      ├─ authService.ts           # 与后端交互、token 落地
+      └─ returnTo.ts              # 登录成功后的回跳工具
+
